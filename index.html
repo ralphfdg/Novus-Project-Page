@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.R.I.M by Novus</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="glass-nav">
+    <div class="container has-text-centered">
+      <a href="index.html" class="is-active">Project Overview</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="updates.html">Project Updates</a>
+    </div>
+  </nav>
+
+  <section id="hero" class="section is-medium pb-2">
+    <div class="container">
+      <div class="has-text-centered mb-6 relative-container">
+        <div class="hero-glow"></div>
+        <h1 class="title is-1 hero-title">B.R.I.M.S.</h1>
+        <p class="subtitle is-4 mt-4 hero-subtitle">
+          Barangay Resident Information and Management System
+        </p>
+        <p class="is-size-6 has-text-grey-light mt-2 max-w-xl mx-auto" style="max-width: 600px; margin: 0 auto;">
+          Digitizing and automating the entire resident registration and service request workflow for faster, smarter local governance.
+        </p>
+      </div>
+
+      <div class="columns is-desktop is-variable is-4 mt-6">
+        
+        <div class="column is-4">
+          <div class="webflow-card">
+            <h3 class="title is-4 has-text-white">Our Problem</h3>
+            <p class="has-text-grey-light">
+              Traditional, manual registration processes in barangays are often tedious, prone to human error, and inefficient. This results in long queues, missing documents, and delayed public services.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="webflow-card">
+            <h3 class="title is-4 has-text-white">Our Solution</h3>
+            <p class="has-text-grey-light">
+              We digitize and automate the entire workflow, creating a centralized, secure, and easily accessible database for local government units, eliminating paper trails and administrative bottlenecks.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="webflow-card">
+            <h3 class="title is-4 has-text-white">Target Users</h3>
+            <p class="has-text-grey-light mb-2">
+              <strong class="has-text-brand">Barangay Residents:</strong> Need an easy way to register, pay fees, and request services online.
+            </p>
+            <p class="has-text-grey-light">
+              <strong class="has-text-brand">Barangay Staff:</strong> Require an organized dashboard to verify, approve, and manage resident records efficiently.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section pb-6 pt-6">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered mb-6 has-text-white">System <span class="has-text-brand">Workflow & Features</span></h2>
+      
+      <div class="columns is-multiline is-stretch">
+        
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">1</div>
+            <h3 class="title is-4 has-text-brand mb-3">Resident Accesses Portal</h3>
+            <p class="has-text-grey-light">The resident opens the barangay online registration portal and fills out the resident registration form.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">2</div>
+            <h3 class="title is-4 has-text-brand mb-3">Form Submission via Zapier</h3>
+            <p class="has-text-grey-light">The form is submitted through Zapier, which automatically captures the resident’s information and triggers an automation workflow.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">3</div>
+            <h3 class="title is-4 has-text-brand mb-3">API Data Transfer</h3>
+            <p class="has-text-grey-light">Zapier sends the submitted form data to the Barangay Resident Management System using an API for automatic processing.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">4</div>
+            <h3 class="title is-4 has-text-brand mb-3">System Validation</h3>
+            <p class="has-text-grey-light">The system validates the resident’s information to ensure all required details are complete and that there are no duplicate records.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">5</div>
+            <h3 class="title is-4 has-text-brand mb-3">Invalid Information Handling</h3>
+            <p class="has-text-grey-light">If the information is incomplete or invalid, the system sends an SMS notification to the resident requesting correction.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">6</div>
+            <h3 class="title is-4 has-text-brand mb-3">Resident Record Creation</h3>
+            <p class="has-text-grey-light">If the information is valid, the system creates a new resident record in the barangay database.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">7</div>
+            <h3 class="title is-4 has-text-brand mb-3">Payment Processing</h3>
+            <p class="has-text-grey-light">If the requested barangay service requires a fee, the system generates an online payment request and the resident completes the payment through a payment gateway.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">8</div>
+            <h3 class="title is-4 has-text-brand mb-3">Payment Confirmation</h3>
+            <p class="has-text-grey-light">After payment is completed, the payment gateway sends confirmation to the system via API.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">9</div>
+            <h3 class="title is-4 has-text-brand mb-3">SMS Notification</h3>
+            <p class="has-text-grey-light">The system sends an SMS notification confirming successful registration or payment to the resident.</p>
+          </div>
+        </div>
+
+        <div class="column is-12-mobile is-6-tablet is-6-desktop">
+          <div class="glass-feature relative-card">
+            <div class="step-number">10</div>
+            <h3 class="title is-4 has-text-brand mb-3">Staff Verification</h3>
+            <p class="has-text-grey-light">Barangay staff review the resident’s submitted information and supporting documents through their organized dashboard.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

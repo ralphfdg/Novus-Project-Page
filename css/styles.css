@@ -1,0 +1,179 @@
+/* ========================================= */
+/* GLOBAL VARIABLES & BASE STYLES            */
+/* ========================================= */
+:root {
+  --brand-yellow: #EEDF7A;
+  --bg-dark: #07090e; /* Deep charcoal/almost black */
+  --card-dark: #11141d; /* Slightly lighter charcoal for cards */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at top center, #35300c 0%, var(--bg-dark) 60%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.has-text-brand {
+  color: var(--brand-yellow) !important;
+}
+
+/* ========================================= */
+/* NAVIGATION                                */
+/* ========================================= */
+.glass-nav {
+  background: rgba(7, 9, 14, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.glass-nav a {
+  color: var(--text-main);
+  font-weight: 500;
+  margin: 0 20px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.glass-nav a:hover, .glass-nav a.is-active {
+  color: var(--brand-yellow);
+}
+
+/* ========================================= */
+/* HERO SECTION (WEBFLOW VIBE)               */
+/* ========================================= */
+.relative-container {
+  position: relative;
+}
+
+.hero-title {
+  font-size: 4rem !important;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  color: var(--brand-yellow) !important;
+  font-weight: 500;
+}
+
+/* Yellow glowing orb behind the title */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  background: var(--brand-yellow);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ========================================= */
+/* WEBFLOW-STYLE CARDS (Intro Section)       */
+/* ========================================= */
+.webflow-card {
+  background-color: var(--card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient top border effect */
+.webflow-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand-yellow), transparent);
+  opacity: 0.5;
+}
+
+.webflow-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(238, 223, 122, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.webflow-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================= */
+/* WORKFLOW FEATURE CARDS & NUMBERS          */
+/* ========================================= */
+.glass-feature {
+  background: rgba(17, 20, 29, 0.6); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem; 
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.glass-feature:hover {
+  background: rgba(238, 223, 122, 0.05);
+  border: 1px solid rgba(238, 223, 122, 0.3);
+}
+
+.relative-card {
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: var(--bg-dark);
+  border: 1px solid var(--brand-yellow);
+  color: var(--brand-yellow);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(238, 223, 122, 0.1);
+}
+
+/* ========================================= */
+/* TEAM PROFILE AVATARS                      */
+/* ========================================= */
+.avatar-glow {
+  border: 2px solid rgba(238, 223, 122, 0.5); /* Yellow brand border */
+  padding: 4px; /* Space between image and border */
+  background: rgba(15, 23, 42, 0.5);
+  box-shadow: 0 4px 15px rgba(238, 223, 122, 0.15); /* Subtle yellow glow */
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.glass-feature:hover .avatar-glow {
+  border-color: var(--brand-yellow);
+  box-shadow: 0 8px 25px rgba(238, 223, 122, 0.3);
+  transform: scale(1.05);
+}
