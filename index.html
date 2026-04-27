@@ -78,80 +78,80 @@
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">1</div>
-            <h3 class="title is-4 has-text-brand mb-3">Resident Accesses Portal</h3>
-            <p class="has-text-grey-light">The resident opens the barangay online registration portal and fills out the resident registration form.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Resident Registration</h3>
+            <p class="has-text-grey-light">A new resident visits the portal and fills out the registration form, which is processed by the Laravel backend.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">2</div>
-            <h3 class="title is-4 has-text-brand mb-3">Form Submission via Zapier</h3>
-            <p class="has-text-grey-light">The form is submitted through Zapier, which automatically captures the resident’s information and triggers an automation workflow.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Secure Profile Creation</h3>
+            <p class="has-text-grey-light">The system creates a core User account using UUIDs for security and automatically assigns a "Resident" role via Spatie RBAC.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">3</div>
-            <h3 class="title is-4 has-text-brand mb-3">API Data Transfer</h3>
-            <p class="has-text-grey-light">Zapier sends the submitted form data to the Barangay Resident Management System using an API for automatic processing.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Onboarding Notifications</h3>
+            <p class="has-text-grey-light">Laravel instantly sends a formatted HTML welcome email via Mailtrap and a welcome SMS through the Traccar gateway</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">4</div>
-            <h3 class="title is-4 has-text-brand mb-3">System Validation</h3>
-            <p class="has-text-grey-light">The system validates the resident’s information to ensure all required details are complete and that there are no duplicate records.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Service & Payment Trigger</h3>
+            <p class="has-text-grey-light">For documents or events, residents are redirected to a secure Stripe Checkout session to process required fees.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">5</div>
-            <h3 class="title is-4 has-text-brand mb-3">Invalid Information Handling</h3>
-            <p class="has-text-grey-light">If the information is incomplete or invalid, the system sends an SMS notification to the resident requesting correction.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Cryptographic Confirmation</h3>
+            <p class="has-text-grey-light">Stripe fires a signed webhook back to the server; B.R.I.M. verifies the signature and flags the record as "Paid".</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">6</div>
-            <h3 class="title is-4 has-text-brand mb-3">Resident Record Creation</h3>
-            <p class="has-text-grey-light">If the information is valid, the system creates a new resident record in the barangay database.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Administrative Review</h3>
+            <p class="has-text-grey-light">The request appears on the Secretary's dashboard for final verification and manual "Approve" triggering.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">7</div>
-            <h3 class="title is-4 has-text-brand mb-3">Payment Processing</h3>
-            <p class="has-text-grey-light">If the requested barangay service requires a fee, the system generates an online payment request and the resident completes the payment through a payment gateway.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Make.com PDF Automation</h3>
+            <p class="has-text-grey-light">Upon approval, Make.com catches the JSON payload, maps it to a Google Doc template, and generates an official PDF.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">8</div>
-            <h3 class="title is-4 has-text-brand mb-3">Payment Confirmation</h3>
-            <p class="has-text-grey-light">After payment is completed, the payment gateway sends confirmation to the system via API.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Document Issuance</h3>
+            <p class="has-text-grey-light">The PDF is saved to Google Drive, and the resident receives an email notification that their document is ready.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">9</div>
-            <h3 class="title is-4 has-text-brand mb-3">SMS Notification</h3>
-            <p class="has-text-grey-light">The system sends an SMS notification confirming successful registration or payment to the resident.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Real-time Dispatch</h3>
+            <p class="has-text-grey-light">The Traccar SMS gateway sends a specific tracking number or emergency alert directly to the resident or responder's phone.</p>
           </div>
         </div>
 
         <div class="column is-12-mobile is-6-tablet is-6-desktop">
           <div class="glass-feature relative-card">
             <div class="step-number">10</div>
-            <h3 class="title is-4 has-text-brand mb-3">Staff Verification</h3>
-            <p class="has-text-grey-light">Barangay staff review the resident’s submitted information and supporting documents through their organized dashboard.</p>
+            <h3 class="title is-4 has-text-brand mb-3">Smart Ticket Generation</h3>
+            <p class="has-text-grey-light">The system verifies event capacity and automatically emails a dynamically generated HTML ticket to the resident.</p>
           </div>
         </div>
 
