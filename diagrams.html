@@ -50,6 +50,18 @@
 
   <section id="diagram-content" class="section pt-5 pb-6">
     <div class="container" style="max-width: 1000px;">
+
+      <div class="glass-feature mb-6">
+        <h2 class="title is-3 has-text-white mb-2">Entity Relationship Diagram (ERD)</h2>
+        <p class="has-text-grey-light mb-5">
+          Visualizes the database schema and the structural relationships between core system entities, such as Residents, Users, Certificate Requests, Incidents, and Events.
+        </p>
+        <div class="diagram-wrapper has-text-centered">
+          <figure class="image is-inline-block">
+            <img src="assets/BRIM_ERD.png" alt="B.R.I.M. Entity Relationship Diagram" style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+      </div>
       
       <div class="glass-feature mb-6">
         <h2 class="title is-3 has-text-white mb-2">Use Case Diagram</h2>
@@ -68,21 +80,40 @@
         <p class="has-text-grey-light mb-5">
           Maps the flow of information through the system, detailing how resident data, payment statuses, and service requests are processed and stored.
         </p>
-        <div class="diagram-placeholder">
-          <p class="has-text-brand is-size-5 mb-2">Diagram In Progress</p>
-          <p class="has-text-grey-light is-size-6">Pending upload from the development team.</p>
+        <div class="diagram-wrapper has-text-centered">
+          <figure class="image is-inline-block">
+            <img src="assets/DFD_diagram.png" alt="B.R.I.M. Data Flow Diagram" style="max-width: 100%; height: auto;">
+          </figure>
         </div>
       </div>
 
       <div class="glass-feature mb-6">
         <h2 class="title is-3 has-text-white mb-2">C4 Architectural Model</h2>
         <p class="has-text-grey-light mb-5">
-          Provides a structural overview of the B.R.I.M. software architecture, breaking down the system into containers and components.
+          Provides a comprehensive structural overview of the B.R.I.M. software architecture. This section breaks down the system into multiple levels: System Context, Containers, and Components.
         </p>
-        <div class="diagram-placeholder">
-          <p class="has-text-brand is-size-5 mb-2">Diagram In Progress</p>
-          <p class="has-text-grey-light is-size-6">Pending upload from the development team.</p>
+        
+        <h3 class="title is-5 has-text-brand mt-5 mb-2">Level 1: System Context Diagram</h3>
+        <div class="diagram-wrapper has-text-centered mb-5">
+          <figure class="image is-inline-block">
+            <img src="assets/Level-1-System-Context-Diagram.png" alt="C4 Level 1 - System Context Diagram" style="max-width: 100%; height: auto;">
+          </figure>
         </div>
+
+        <h3 class="title is-5 has-text-brand mt-5 mb-2">Level 2: Container Diagram</h3>
+        <div class="diagram-wrapper has-text-centered mb-5">
+          <figure class="image is-inline-block">
+            <img src="assets/Level-2-Container-Model.png" alt="C4 Level 2 - Container Diagram" style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+
+        <h3 class="title is-5 has-text-brand mt-5 mb-2">Level 3: Component Diagram</h3>
+        <div class="diagram-wrapper has-text-centered">
+          <figure class="image is-inline-block">
+            <img src="assets/Level-3-Component-Model-(API).png" alt="C4 Level 3 - Component Diagram" style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+
       </div>
 
     </div>
