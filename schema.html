@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.R.I.M.S. | Database Schema</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Custom table styling to match the dark glassmorphism theme */
+    .schema-table {
+      background-color: transparent !important;
+      color: var(--text-muted) !important;
+    }
+    .schema-table th {
+      color: var(--brand-yellow) !important;
+      border-bottom: 2px solid rgba(238, 223, 122, 0.3) !important;
+    }
+    .schema-table td, .schema-table th {
+      border-color: rgba(255, 255, 255, 0.05) !important;
+      vertical-align: middle;
+    }
+    .schema-table code {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .fk-badge {
+      font-size: 0.7rem;
+      background: rgba(238, 223, 122, 0.1);
+      color: var(--brand-yellow);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(238, 223, 122, 0.3);
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="glass-nav">
+    <div class="container has-text-centered">
+      <a href="index.html">Project Overview</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="updates.html">Project Updates</a>
+      <a href="schema.html" class="is-active">Database Schema</a>
+      <a href="diagrams.html">System Diagrams</a>
+      <a href="video.html">Systems Integration & Architecture</a>
+    </div>
+  </nav>
+
+  <section class="section pb-2 pt-6">
+    <div class="container has-text-centered relative-container">
+      <div class="hero-glow" style="width: 250px; height: 100px;"></div>
+      <h1 class="title is-1 hero-title mb-2">Database Schema</h1><br>
+      <p class="subtitle is-4 has-text-brand">Core Entity-Relationship Structure</p>
+    </div>
+  </section>
+
+  <section id="schema-tables" class="section pt-5 pb-6">
+    <div class="container" style="max-width: 1000px;">
+      
+      <p class="has-text-grey-light has-text-centered mb-6">
+        Below are the core business tables that power the B.R.I.M. system, illustrating how resident data, service requests, and barangay events are linked.
+      </p>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">Users Table <span class="is-size-6 has-text-grey-light fw-normal">(users)</span></h3>
+        <div class="table-container">
+          <table class="table is-fullwidth schema-table">
+            <thead>
+              <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>id</code></td>
+                <td>CHAR(36)</td>
+                <td>Primary Key (UUID)</td>
+              </tr>
+              <tr>
+                <td><code>name</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Account holder's full name</td>
+              </tr>
+              <tr>
+                <td><code>email</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Unique email address for authentication</td>
+              </tr>
+              <tr>
+                <td><code>password</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Hashed password</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">Residents Table <span class="is-size-6 has-text-grey-light fw-normal">(residents)</span></h3>
+        <div class="table-container">
+          <table class="table is-fullwidth schema-table">
+            <thead>
+              <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>id</code></td>
+                <td>CHAR(36)</td>
+                <td>Primary Key (UUID)</td>
+              </tr>
+              <tr>
+                <td><code>user_id</code><span class="fk-badge">FK</span></td>
+                <td>CHAR(36)</td>
+                <td>References <code>users.id</code></td>
+              </tr>
+              <tr>
+                <td><code>first_name</code> / <code>last_name</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Resident's primary identification</td>
+              </tr>
+              <tr>
+                <td><code>date_of_birth</code></td>
+                <td>DATE</td>
+                <td>Used for age validation</td>
+              </tr>
+              <tr>
+                <td><code>gender</code></td>
+                <td>ENUM</td>
+                <td>'Male', 'Female', 'Other'</td>
+              </tr>
+              <tr>
+                <td><code>civil_status</code></td>
+                <td>ENUM</td>
+                <td>'Single', 'Married', 'Widowed', 'Legally Separated'</td>
+              </tr>
+              <tr>
+                <td><code>purok_or_street</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Local barangay address</td>
+              </tr>
+              <tr>
+                <td><code>residency_status</code></td>
+                <td>ENUM</td>
+                <td>'Active', 'Moved', 'Deceased'</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">Certificate Requests <span class="is-size-6 has-text-grey-light fw-normal">(certificate_requests)</span></h3>
+        <div class="table-container">
+          <table class="table is-fullwidth schema-table">
+            <thead>
+              <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>id</code></td>
+                <td>CHAR(36)</td>
+                <td>Primary Key (UUID)</td>
+              </tr>
+              <tr>
+                <td><code>resident_id</code><span class="fk-badge">FK</span></td>
+                <td>CHAR(36)</td>
+                <td>References <code>residents.id</code></td>
+              </tr>
+              <tr>
+                <td><code>certificate_type</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Type of document requested</td>
+              </tr>
+              <tr>
+                <td><code>tracking_number</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Unique identifier for tracking status</td>
+              </tr>
+              <tr>
+                <td><code>request_status</code></td>
+                <td>ENUM</td>
+                <td>'Pending', 'Processing', 'Ready', 'Claimed'</td>
+              </tr>
+              <tr>
+                <td><code>payment_status</code></td>
+                <td>ENUM</td>
+                <td>'Unpaid', 'Paid'</td>
+              </tr>
+              <tr>
+                <td><code>stripe_transaction_id</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Payment gateway reference</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">Incident Reports <span class="is-size-6 has-text-grey-light fw-normal">(incidents)</span></h3>
+        <div class="table-container">
+          <table class="table is-fullwidth schema-table">
+            <thead>
+              <tr>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>id</code></td>
+                <td>CHAR(36)</td>
+                <td>Primary Key (UUID)</td>
+              </tr>
+              <tr>
+                <td><code>resident_id</code><span class="fk-badge">FK</span></td>
+                <td>CHAR(36)</td>
+                <td>References <code>residents.id</code> (Reporter)</td>
+              </tr>
+              <tr>
+                <td><code>incident_type</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Category of the incident</td>
+              </tr>
+              <tr>
+                <td><code>location_details</code></td>
+                <td>VARCHAR(255)</td>
+                <td>Specific location of occurrence</td>
+              </tr>
+              <tr>
+                <td><code>status</code></td>
+                <td>ENUM</td>
+                <td>'Pending', 'Under Investigation', 'Resolved'</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

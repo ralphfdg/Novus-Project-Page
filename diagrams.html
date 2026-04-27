@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.R.I.M.S. | System Diagrams</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .diagram-placeholder {
+      border: 2px dashed rgba(238, 223, 122, 0.3);
+      border-radius: 8px;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .diagram-placeholder:hover {
+      border-color: var(--brand-yellow);
+      background: rgba(238, 223, 122, 0.05);
+    }
+    .diagram-wrapper {
+      background: #ffffff; /* White background to make UML diagrams pop */
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="glass-nav">
+    <div class="container has-text-centered">
+      <a href="index.html">Project Overview</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="updates.html">Project Updates</a>
+      <a href="schema.html">Database Schema</a>
+      <a href="diagrams.html" class="is-active">System Diagrams</a>
+        <a href="video.html">Systems Integration & Architecture</a>
+    </div>
+  </nav>
+
+  <section class="section pb-2 pt-6">
+    <div class="container has-text-centered relative-container">
+      <div class="hero-glow" style="width: 250px; height: 100px;"></div>
+      <h1 class="title is-1 hero-title mb-2">System Diagrams</h1><br>
+      <p class="subtitle is-4 has-text-brand">Architectural & Behavioral Models</p>
+    </div>
+  </section>
+
+  <section id="diagram-content" class="section pt-5 pb-6">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div class="glass-feature mb-6">
+        <h2 class="title is-3 has-text-white mb-2">Use Case Diagram</h2>
+        <p class="has-text-grey-light mb-5">
+          Illustrates the primary interactions between Barangay Residents, Barangay Staff, and external integrations (Zapier, Stripe, SMS) within the B.R.I.M. system.
+        </p>
+        <div class="diagram-wrapper has-text-centered">
+          <figure class="image is-inline-block">
+            <img src="assets/BRIM-Usecase.png" alt="B.R.I.M. Use Case Diagram" style="max-width: 100%; height: auto;">
+          </figure>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h2 class="title is-3 has-text-white mb-2">Data Flow Diagram (DFD)</h2>
+        <p class="has-text-grey-light mb-5">
+          Maps the flow of information through the system, detailing how resident data, payment statuses, and service requests are processed and stored.
+        </p>
+        <div class="diagram-placeholder">
+          <p class="has-text-brand is-size-5 mb-2">Diagram In Progress</p>
+          <p class="has-text-grey-light is-size-6">Pending upload from the development team.</p>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h2 class="title is-3 has-text-white mb-2">C4 Architectural Model</h2>
+        <p class="has-text-grey-light mb-5">
+          Provides a structural overview of the B.R.I.M. software architecture, breaking down the system into containers and components.
+        </p>
+        <div class="diagram-placeholder">
+          <p class="has-text-brand is-size-5 mb-2">Diagram In Progress</p>
+          <p class="has-text-grey-light is-size-6">Pending upload from the development team.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
