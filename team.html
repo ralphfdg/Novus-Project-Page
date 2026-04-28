@@ -6,6 +6,20 @@
   <title>Team Novus</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.team-logo {
+  max-height: 50px; /* keeps logos small */
+  width: auto;
+}
+  </style>
+  
 </head>
 <body>
 
@@ -23,12 +37,18 @@
   </nav>
 
   <section class="section pb-2 pt-6">
-    <div class="container has-text-centered relative-container">
-      <div class="hero-glow" style="width: 200px; height: 100px;"></div>
-      <h1 class="title is-1 hero-title mb-2">Group Novus</h1> <br>
-      <p class="subtitle is-4 has-text-brand">Meet the Development Team</p>
+  <div class="container has-text-centered relative-container">
+    <div class="hero-glow" style="width: 200px; height: 100px;"></div>
+
+    <div class="logo-row mb-3">
+      <img src="assets/AUF-logo.png" alt="Logo 1" class="team-logo">
+      <img src="assets/ccs-logo.png" alt="Logo 2" class="team-logo">
     </div>
-  </section>
+
+    <h1 class="title is-1 hero-title mb-2">Group Novus</h1> <br>
+    <p class="subtitle is-4 has-text-brand">Meet the Development Team</p>
+  </div>
+</section>
 
   <section id="team-profiles" class="section pt-4 pb-6">
     <div class="container">
