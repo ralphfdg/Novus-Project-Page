@@ -6,6 +6,27 @@
   <title>B.R.I.M by Novus</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+  /* Responsive video container */
+    .video-responsive-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .video-responsive-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -161,5 +182,30 @@
     </div>
   </section>
 
+  <section class="section pb-2 pt-6">
+    <div class="container has-text-centered relative-container">
+      <div class="hero-glow" style="width: 250px; height: 100px;"></div>
+      <h1 class="title is-1 hero-title mb-2">SIA</h1><br>
+      <p class="subtitle is-4 has-text-brand">Systems Integration and Architecture</p>
+    </div>
+  </section>
+
+  <section id="demo-video" class="section pt-5 pb-6">
+    <div class="container" style="max-width: 900px;">
+      
+      <div class="glass-feature mb-6">
+        <h2 class="title is-3 has-text-white mb-2">Systems Integration & Architecture Explainer</h2>
+        <p class="has-text-grey-light mb-5">
+          Watch our team's concise explainer video demonstrating the core concepts of Systems Integration and Architecture (SIA). This presentation breaks down fundamental definitions, illustrates how different components interact through APIs and data flows, and explores the vital role of architecture in organizing complex systems using real-world applications.
+        </p>
+        
+        <div class="video-responsive-wrapper">
+          <iframe src="https://drive.google.com/file/d/1eD1WFFb6nl-xPfuTUI9vjKqWRhxDjtlR/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+      </div>
+
+    </div>
+  </section>
 </body>
 </html>
