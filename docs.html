@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.R.I.M. | API Documentation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="glass-nav">
+    <div class="container has-text-centered">
+      <a href="index.html">Project Overview</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="updates.html">Project Updates</a>
+      <a href="schema.html">Database Schema</a>
+      <a href="diagrams.html">System Diagrams</a>
+      <a href="docs.html" class="is-active">API Documentation</a>
+      <a href="video.html">SIA</a>
+    </div>
+  </nav>
+
+  <section class="section pb-2 pt-6">
+    <div class="container has-text-centered relative-container">
+      <div class="hero-glow" style="width: 250px; height: 120px;"></div>
+      <h1 class="title is-1 hero-title mb-2">API Hub</h1>
+      <p class="subtitle is-4 has-text-brand">Systems Integration Architecture & Specifications</p>
+    </div>
+  </section>
+
+  <section class="section pt-4 pb-6">
+    <div class="container">
+      <div class="columns is-multiline">
+        
+        <div class="column is-12">
+          <div class="webflow-card">
+            <h2 class="title is-3 has-text-white mb-4">Project Overview</h2>
+            <p class="has-text-grey-light is-size-5 mb-5">
+              The B.R.I.M. (Barangay Resident Information Management) API is a RESTful service built with <strong>Laravel 11</strong>. 
+              It serves as the central orchestration layer for barangay operations, integrating third-party services like 
+              <strong>Stripe</strong> for payments, <strong>Traccar</strong> for SMS, and <strong>Make.com</strong> for document automation.
+            </p>
+            <div class="columns">
+              <div class="column">
+                <p class="has-text-brand has-text-weight-bold mb-1">Base URL</p>
+                <code style="background: #1a1e2e; color: #fff; padding: 0.5rem; border-radius: 5px;">https://brim-api.test/api</code>
+              </div>
+              <div class="column">
+                <p class="has-text-brand has-text-weight-bold mb-1">Response Format</p>
+                <p class="has-text-grey-light">JSON (application/json)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-7">
+          <div class="glass-feature">
+            <h3 class="title is-4 has-text-white mb-3">Authentication & Security</h3>
+            <p class="has-text-grey-light mb-4">
+              Our API implements <strong>Laravel Sanctum</strong> for token-based authentication. 
+              To secure the system against enumeration attacks, we utilize <strong>UUIDs</strong> 
+              as primary keys for all public-facing resources.
+            </p>
+            <div class="notification is-dark" style="background: rgba(0,0,0,0.3); border-left: 4px solid var(--brand-yellow);">
+              <p class="is-size-7 mb-2"><strong>HEADER REQUIREMENT:</strong></p>
+              <code style="background: transparent; color: var(--brand-yellow);">Authorization: Bearer {your_api_token}</code>
+            </div>
+            <p class="is-size-7 has-text-grey">
+              * Tokens can be generated through the User Dashboard under "Developer Settings."
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-5">
+          <div class="glass-feature has-text-centered is-flex is-flex-direction-column is-justify-content-center">
+            <h3 class="title is-4 has-text-white mb-4">Interactive Endpoints</h3>
+            <p class="has-text-grey-light mb-5">Explore detailed request parameters, JSON payloads, and live testing tools.</p>
+            <a href="docs/index.html" class="button is-brand is-large is-fullwidth" 
+               style="background-color: var(--brand-yellow); color: #000; font-weight: 700; border: none;">
+              Go to Full API Docs
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel API Documentation",
+        "_postman_id": "e74cf402-0e2e-41b0-a6a8-0e7f6460bd3d",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/webhooks\/stripe",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/webhooks\/stripe",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/webhooks\/stripe"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"id\":\"019dc503-8ba8-7386-96e4-55db5a62fee5\",\"name\":\"Juan Dela Cruz\",\"email\":\"deguzman.ralphethan@student.auf.edu.ph\",\"email_verified_at\":null,\"created_at\":\"2026-04-25T14:20:37.000000Z\",\"updated_at\":\"2026-04-25T14:20:37.000000Z\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Fetch live weather data for Angeles City from an External API",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/weather",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/weather"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjIzRkNpK3RZNXNHcmNTclIvUFJPb3c9PSIsInZhbHVlIjoic2o0VXdlLzBZK1FCQ2FqeWVyV2Y4dlo5bVRyeW9ITndmdGJXYlc0eFNhTmhBcVN1THA5eEJpMGo3dG11SkcwcTJHaEJFaGtnQzZxOUtuMEhUZXdieEY1SFczbTFhWkN6SXY0RDg2SzdyVVZ5cHJucWN5WE1iRFE4RXZCU3djSWYiLCJtYWMiOiI2OWVkY2E0Zjc5ZWIwOTQzNDZjM2JjZmYwZTRlYzkwMDRjOTA0MTYwZGVmY2E0ZmNhYjk5NWNjY2MwNGI3ZDFkIiwidGFnIjoiIn0%3D; expires=Tue, 28 Apr 2026 02:45:32 GMT; Max-Age=7200; path=\/; samesite=lax; laravel-session=eyJpdiI6Ii9uaWZYRG15OEt3Nm5BZVNPV0hsZGc9PSIsInZhbHVlIjoiQ0d3TDR1cTVqc2xwYlJVY2xib1R4R29TbUYrbENWdE1ZSkZEUE43WHJoZk1qU2k1NWQ5NWh2SnhKWklwNGJ2ZEhxWlBJODk1WUJFcmhUdmFoMW13ZXBjNWY1VjhBaU1Bc1kyZWZubGRYS1hSRlhoak92TUVCMy8xS3ZqSm96SmsiLCJtYWMiOiJjMjE1NTA5N2U5ZmU2MmI1ZWNmYTZhMDNhOGQxMTI3OGZlOWZhMGJlOTlhZjk0YjA5NzU3MDc5YWIxY2NmYWI1IiwidGFnIjoiIn0%3D; expires=Tue, 28 Apr 2026 02:45:32 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"message\":\"Weather data fetched successfully from Open-Meteo.\",\"location\":\"Angeles City, Pampanga\",\"temperature\":\"29.8\\u00b0C\",\"windspeed\":\"7.8 km\\\/h\",\"is_day\":\"Yes\",\"raw_data\":{\"time\":\"2026-04-28T08:45\",\"interval\":900,\"temperature\":29.8,\"windspeed\":7.8,\"winddirection\":105,\"is_day\":1,\"weathercode\":1}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Resident Management",
+            "description": "\nAPIs for managing the barangay resident database.",
+            "item": [
+                {
+                    "name": "List all residents",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/residents",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/residents"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns a paginated list of all residents in the barangay.\n* @authenticated"
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"success\",\"message\":\"Residents retrieved successfully.\",\"data\":{\"current_page\":1,\"data\":[{\"id\":\"019dc54c-aa04-704a-bcd2-49b05b982a07\",\"first_name\":\"test\",\"middle_name\":\"t\",\"last_name\":\"test1\",\"suffix\":null,\"date_of_birth\":\"2019-01-29\",\"gender\":\"Male\",\"civil_status\":\"Single\",\"purok_or_street\":\"FPH 11\",\"contact_number\":\"09288736929\",\"is_registered_voter\":0,\"occupation\":\"Worker\",\"residency_status\":\"Active\"},{\"id\":\"019dc6ab-5cc6-7019-b124-e0ae3c50b7a9\",\"first_name\":\"Maria\",\"middle_name\":null,\"last_name\":\"Dela Cruz\",\"suffix\":null,\"date_of_birth\":\"1985-10-16\",\"gender\":\"Female\",\"civil_status\":\"Single\",\"purok_or_street\":\"FPH 1 brgy2\",\"contact_number\":\"09288736929\",\"is_registered_voter\":0,\"occupation\":\"Housewife\",\"residency_status\":\"Active\"},{\"id\":\"f6d089f8-e1c6-4c42-b534-f45a241f8d2e\",\"first_name\":\"Test3\",\"middle_name\":null,\"last_name\":\"3test\",\"suffix\":null,\"date_of_birth\":\"2003-03-05\",\"gender\":\"Other\",\"civil_status\":\"Single\",\"purok_or_street\":\"FPH 1 brgy24\",\"contact_number\":\"09288736929\",\"is_registered_voter\":0,\"occupation\":null,\"residency_status\":\"Active\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/residents?page=1\",\"from\":1,\"last_page\":1,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/residents?page=1\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"page\":null,\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/residents?page=1\",\"label\":\"1\",\"page\":1,\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"page\":null,\"active\":false}],\"next_page_url\":null,\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/residents\",\"per_page\":15,\"prev_page_url\":null,\"to\":3,\"total\":3}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a specific resident",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/residents\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/residents\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "019dc54c-aa04-704a-bcd2-49b05b982a07",
+                                    "description": "The UUID of the resident."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Retrieves the complete profile of a single resident using their UUID.\n* @authenticated"
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"success\",\"message\":\"Resident details retrieved.\",\"data\":{\"id\":\"019dc54c-aa04-704a-bcd2-49b05b982a07\",\"first_name\":\"test\",\"middle_name\":\"t\",\"last_name\":\"test1\",\"suffix\":null,\"date_of_birth\":\"2019-01-29\",\"gender\":\"Male\",\"civil_status\":\"Single\",\"purok_or_street\":\"FPH 11\",\"contact_number\":\"09288736929\",\"is_registered_voter\":0,\"occupation\":\"Worker\",\"residency_status\":\"Active\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a new resident",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/residents",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/residents"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"Juan\",\"middle_name\":\"amniihfqcoynlazghdtqt\",\"last_name\":\"Dela Cruz\",\"suffix\":\"auydlsmsjuryvojcybzvr\",\"date_of_birth\":\"1990-05-15\",\"gender\":\"Male\",\"civil_status\":\"Single\",\"purok_or_street\":\"Purok 1\",\"contact_number\":\"vazjrcnfbaqywuxhgjjmz\",\"is_registered_voter\":true,\"occupation\":\"uxjubqouzswiwxtrkimfc\",\"residency_status\":\"Moved\"}"
+                        },
+                        "description": "Creates a new resident record in the database."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update a resident",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/residents\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/residents\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "consequatur",
+                                    "description": "The UUID of the resident."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"vmqeopfuudtdsufvyvddq\",\"middle_name\":\"amniihfqcoynlazghdtqt\",\"last_name\":\"qxbajwbpilpmufinllwlo\",\"suffix\":\"auydlsmsjuryvojcybzvr\",\"date_of_birth\":\"2026-04-28T00:45:29\",\"gender\":\"Female\",\"civil_status\":\"Widowed\",\"purok_or_street\":\"byickznkygloigmkwxphl\",\"contact_number\":\"09123456789\",\"is_registered_voter\":true,\"occupation\":\"uxjubqouzswiwxtrkimfc\",\"residency_status\":\"Active\"}"
+                        },
+                        "description": "Partially update an existing resident's information. You only need to send the fields you wish to change."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a resident",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/residents\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/residents\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "consequatur",
+                                    "description": "The UUID of the resident."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Permanently removes a resident from the database."
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "Authorization",
+                "type": "string"
+            }
+        ]
+    }
+}
