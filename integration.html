@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.R.I.M.S. | Integration Guidelines</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Custom styling to match the dark glassmorphism theme */
+    .api-endpoint code {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: var(--brand-yellow);
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-weight: 600;
+    }
+    .integration-list li {
+      margin-bottom: 0.5rem;
+    }
+    .workflow-item {
+      border-left: 3px solid;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="glass-nav">
+    <div class="container has-text-centered">
+      <a href="index.html">Project Overview</a>
+      <a href="team.html">Meet the Team</a>
+      <a href="updates.html">Project Updates</a>
+      <a href="schema.html">Database Schema</a>
+      <a href="diagrams.html">System Diagrams</a>
+      <a href="docs.html">API Documentation</a>
+      <a href="integration.html" class="is-active">Integration</a>
+      <a href="video.html">SIA</a>
+    </div>
+  </nav>
+
+  <section class="section pb-2 pt-6">
+    <div class="container has-text-centered relative-container">
+      <div class="hero-glow" style="width: 250px; height: 100px;"></div>
+      <h1 class="title is-1 hero-title mb-2">Integration Guidelines</h1><br>
+      <p class="subtitle is-4 has-text-brand">API Interaction & External Automations</p>
+    </div>
+  </section>
+
+  <section id="integration-content" class="section pt-5 pb-6">
+    <div class="container" style="max-width: 1000px;">
+
+      <p class="has-text-grey-light has-text-centered mb-6">
+        Technical documentation explaining how external systems interact with the API and backend automations.
+      </p>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">1. System Overview</h3>
+        <p class="has-text-grey-light mb-4">
+          The <strong class="has-text-brand">B.R.I.M. (Barangay Resident Information Management)</strong> system is an automated local government platform designed to digitize and streamline barangay operations. Transitioning away from manual logbooks, B.R.I.M. provides a REST API-driven backend to connect residents with barangay officials.
+        </p>
+        <p class="has-text-grey-light mb-4">
+          The architecture secures data using Role-Based Access Control (RBAC) via the Spatie package and utilizes UUIDs for primary keys to ensure maximum security against enumeration attacks.
+        </p>
+        <p class="has-text-white mb-2" style="font-weight: 600;">Primary Third-Party Integrations:</p>
+        <div class="content has-text-grey-light integration-list">
+          <ul>
+            <li><strong class="has-text-brand">Make.com:</strong> Handles document automation and template mapping.</li>
+            <li><strong class="has-text-brand">Stripe:</strong> Processes online payments for certificates and event registrations.</li>
+            <li><strong class="has-text-brand">Traccar:</strong> Serves as an SMS gateway for emergency dispatching.</li>
+            <li><strong class="has-text-brand">Open-Meteo API:</strong> Fetches live weather data for Angeles City.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">2. Authentication Instructions</h3>
+        <p class="has-text-grey-light mb-4">
+          The B.R.I.M. system secures its primary REST API endpoints using <strong class="has-text-brand">Laravel Sanctum</strong>, which provides a robust token-based authentication system.
+        </p>
+        <p class="has-text-grey-light mb-4">
+          Any external service or application consuming the secure REST API must include a valid Bearer Token within the authorization header of the HTTP request:
+        </p>
+        <pre style="background-color: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem;"><code class="has-text-brand">Authorization: Bearer {your_api_token_here}</code></pre>
+        <p class="has-text-grey-light">
+          For comprehensive details on payload structures, developers can view the full interactive Scribe documentation locally by navigating to the <code>/docs</code> route or clicking the API Documentation link in the navigation.
+        </p>
+      </div>
+
+      <div class="glass-feature mb-6 api-endpoint">
+        <h3 class="title is-4 has-text-white mb-4">3. API Usage Examples</h3>
+        <p class="has-text-grey-light mb-5">
+          The REST API exposes several core endpoints for managing resident data. These endpoints are strictly protected by the Sanctum middleware.
+        </p>
+
+        <div class="columns is-multiline">
+          <div class="column is-12 mb-2">
+            <h4 class="title is-5 has-text-white mb-3">Retrieve Data</h4>
+            <div class="content has-text-grey-light">
+              <ul style="list-style-type: none; margin-left: 0;">
+                <li class="mb-2"><code>GET /api/residents</code> — Fetch a complete list of residents.</li>
+                <li><code>GET /api/residents/{id}</code> — Fetch a specific resident by their UUID.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column is-12 mb-2">
+            <h4 class="title is-5 has-text-white mb-3">Create Records</h4>
+            <div class="content has-text-grey-light">
+              <ul style="list-style-type: none; margin-left: 0;">
+                <li><code>POST /api/residents</code> — Requires a valid JSON payload with resident demographic data to instantiate a new record.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column is-12">
+            <h4 class="title is-5 has-text-white mb-3">Update & Delete</h4>
+            <div class="content has-text-grey-light">
+              <ul style="list-style-type: none; margin-left: 0;">
+                <li class="mb-2"><code>PATCH /api/residents/{id}</code> — Update specific attributes of a resident.</li>
+                <li><code>DELETE /api/residents/{id}</code> — Permanently remove a resident record.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-feature mb-6">
+        <h3 class="title is-4 has-text-white mb-4">4. Integration Workflow Explanation</h3>
+        <p class="has-text-grey-light mb-5">
+          B.R.I.M. relies on several orchestrated data flows to handle requests and community events seamlessly.
+        </p>
+
+        <div class="workflow-item" style="border-color: var(--brand-yellow);">
+          <h4 class="title is-5 has-text-white mb-2">Payments & Webhooks (Stripe)</h4>
+          <p class="has-text-grey-light">When a resident requests a certificate or registers for a paid event, they are redirected to a live Stripe Checkout session. Upon successful payment, Stripe sends a cryptographic webhook to the unauthenticated <code style="background-color: rgba(0,0,0,0.3); color: var(--brand-yellow); padding: 2px 6px; border-radius: 4px;">/api/webhooks/stripe</code> endpoint. The server verifies the signature, updates the database status to "Paid", and triggers an automated email receipt via Mailtrap.</p>
+        </div>
+
+        <div class="workflow-item" style="border-color: #60a5fa;">
+          <h4 class="title is-5 has-text-white mb-2">Automated Document Generation (Make.com)</h4>
+          <p class="has-text-grey-light">When a barangay Secretary approves a pending document request, the backend immediately triggers an event to Make.com. Make.com captures the JSON payload, maps the fields onto a Google Doc template, creates the official PDF, and securely saves it to Google Drive. Simultaneously, a tracking number is generated and sent via SMS to the resident.</p>
+        </div>
+
+        <div class="workflow-item" style="border-color: #f87171; margin-bottom: 0;">
+          <h4 class="title is-5 has-text-white mb-2">Incident SMS Alerts (Traccar)</h4>
+          <p class="has-text-grey-light">When a resident logs a community issue or emergency, the incident is permanently tied to their profile for accountability. The backend then instantly reaches out to the local Traccar SMS gateway over the network, dispatching an emergency text alert directly to active responders or Barangay Tanods.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
